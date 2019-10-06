@@ -4,6 +4,7 @@ from flask_restalchemy import Api
 from declarative import db
 from model.acordo_leniencia import AcordoLeniencia
 from model.empresa import Empresa
+from serializer.acordo_leniencia import AcordoLenienciaSerializer
 
 app = Flask(__name__)
 db.init_app(app)
@@ -11,7 +12,7 @@ db.init_app(app)
 api = Api(app)
 
 api.add_model(Empresa)
-api.add_model(AcordoLeniencia)
+api.add_model(AcordoLeniencia, serializer_class=AcordoLenienciaSerializer)
 
 
 @app.route("/")
