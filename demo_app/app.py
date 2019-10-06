@@ -19,7 +19,7 @@ api.add_relation(Empresa.acordoLeniencia, url_rule='/empresa/<relation_id>/acord
 
 @app.route("/")
 def hello():
-    return u'Olá mundo!'
+    return u'Olá SESCOMP!'
 
 
 @app.route("/init_db")
