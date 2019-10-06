@@ -7,6 +7,7 @@ from model.empresa import Empresa
 from serializer.acordo_leniencia import AcordoLenienciaSerializer
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db.init_app(app)
 
 api = Api(app)
