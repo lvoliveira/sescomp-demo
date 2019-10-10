@@ -26,6 +26,5 @@ def hello():
 
 @app.route("/init_db")
 def create_db():
-    db.drop_all()
     db.create_all()
     return 'Banco iniciado'
