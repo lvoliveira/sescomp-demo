@@ -9,7 +9,7 @@ from model.empresa import Empresa
 from serializer.acordo_leniencia import AcordoLenienciaSerializer
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///:memory:')
 db.init_app(app)
 
 api = Api(app)
@@ -26,5 +26,6 @@ def hello():
 
 @app.route("/init_db")
 def create_db():
+    db.drop_all()
     db.create_all()
     return 'Banco iniciado'
