@@ -6,4 +6,3 @@ dependencies:
     - flask-sqlalchemy
     - pip:
         - flask-restalchemy==0.13.0
-
