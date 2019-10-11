@@ -23,7 +23,7 @@ environment.yml
 coverage/
 dist/
 node_modules/
-tmp/
+demo_app/tmp/
 temp/
 platforms/
 plugins/

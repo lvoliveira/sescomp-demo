@@ -7,14 +7,14 @@ from model.empresa import Empresa
 from serializer.acordo_leniencia import AcordoLenienciaSerializer
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmp/test.db'
 db.init_app(app)
 
 api = Api(app)
 
 api.add_model(Empresa)
 api.add_model(AcordoLeniencia, serializer_class=AcordoLenienciaSerializer)
-api.add_relation(Empresa.acordoLeniencia, url_rule='/empresa/<relation_id>/acordo_leniencia', serializer_class=AcordoLenienciaSerializer)
+api.add_relation(Empresa.acordoLeniencia, serializer_class=AcordoLenienciaSerializer)
 
 
 @app.route("/")
