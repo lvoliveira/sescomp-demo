@@ -19,7 +19,7 @@ api.add_relation(Empresa.acordoLeniencia, serializer_class=AcordoLenienciaSerial
 
 @app.route("/")
 def hello():
-    return u'Olá SESCOMP!'
+    return u'Olá mundo!'
 
 
 @app.route("/init_db")
