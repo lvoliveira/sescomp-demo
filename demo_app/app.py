@@ -14,7 +14,7 @@ api = Api(app)
 
 api.add_model(Empresa)
 api.add_model(AcordoLeniencia, serializer_class=AcordoLenienciaSerializer)
-api.add_relation(Empresa.acordoLeniencia, url_rule='/empresa/<relation_id>/acordo_leniencia', serializer_class=AcordoLenienciaSerializer)
+api.add_relation(Empresa.acordoLeniencia, serializer_class=AcordoLenienciaSerializer)
 
 
 @app.route("/")
